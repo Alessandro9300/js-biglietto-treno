@@ -38,12 +38,13 @@ if (numbKm < 10){
 }
 
 
+
 // dò l'output in html
 
 document.getElementById('costoBiglietto').innerHTML = "Il suo viaggio costa " + costoViaggio + " euro!";
 document.getElementById('scontoEta').innerHTML = scontoApplicato;
 document.getElementById('pocaStrada').innerHTML = pochiKm;
-document.getElementById('unoEuro').innerHTML = unEuro;
+
 
 
 //provo parse int
