@@ -11,7 +11,7 @@
 
 
 // chiedo al passeggero quanti anni ha e quanti chilometri vuole percorrere in treno
-
+var scontoApplicato;
 var ageUser = prompt("Quanti anni hai?");
 var numbKm = prompt("Quanti chilometri vuoi percorrere?");
 
@@ -26,12 +26,21 @@ var costoViaggio = numbKm * costoPerKm;
 
 if (ageUser >= 65){
 costoViaggio = costoViaggio - ((costoViaggio * 40) / 100);
+scontoApplicato = "Siamo lieti di comunicarle che le è stata applicata la nostra speciale tariffa 'UN PIEDE NELLA FOSSA'!"
 } else if (ageUser < 18) {
 costoViaggio = costoViaggio - ((costoViaggio * 20) / 100);
+scontoApplicato = "Siamo lieti di comunicarle che le è stata applicata la nostra speciale tariffa 'BIMBO SPECIALE'!!"
 }
+else{
+  scontoApplicato = " ";
+}
+
+
+// messaggio sconto
 
 console.log("euro" + costoPerKm + " tot costo " + costoViaggio);
 
 // dò l'output in html
 
-document.getElementById('costoBiglietto').innerHTML = "Il suo viaggio costa " + costoViaggio;
+document.getElementById('costoBiglietto').innerHTML = "Il suo viaggio costa " + costoViaggio + " euro!";
+document.getElementById('scontoEta').innerHTML = scontoApplicato;
