@@ -18,9 +18,11 @@ var numbKm = prompt("Quanti chilometri vuoi percorrere?");
 console.log("età " + ageUser + " km " + numbKm);
 
 // calcolo il prezzo dei biglietti
-
+var pochiKm = null;
 var costoPerKm = 0.21;
-var costoViaggio = numbKm * costoPerKm;
+var costoViaggio = Math.ceil(numbKm * costoPerKm);
+
+
 
 // calcolo gli sconti
 
@@ -35,12 +37,16 @@ else{
   scontoApplicato = " ";
 }
 
-
-// messaggio sconto
+if (numbKm < 10){
+  var pochiKm = "Per così poca strada poteva andarsene in bici D:"
+}
 
 console.log("euro" + costoPerKm + " tot costo " + costoViaggio);
 
+
 // dò l'output in html
+
 
 document.getElementById('costoBiglietto').innerHTML = "Il suo viaggio costa " + costoViaggio + " euro!";
 document.getElementById('scontoEta').innerHTML = scontoApplicato;
+document.getElementById('pocaStrada').innerHTML = pochiKm;
