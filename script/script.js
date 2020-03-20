@@ -18,7 +18,8 @@ console.log("età " + ageUser + " km " + numbKm);
 
 var pochiKm = null;
 var costoPerKm = 0.21;
-var costoViaggio = Math.ceil(numbKm * costoPerKm);
+var costoViaggio = numbKm * costoPerKm;
+
 
 // calcolo gli sconti (e altre cose)
 
@@ -38,10 +39,9 @@ if (numbKm < 10){
 }
 
 
-
 // dò l'output in html
 
-document.getElementById('costoBiglietto').innerHTML = "Il suo viaggio costa " + costoViaggio + " euro!";
+document.getElementById('costoBiglietto').innerHTML = "Il suo viaggio costa " + costoViaggio.toFixed(2) + " euro!";
 document.getElementById('scontoEta').innerHTML = scontoApplicato;
 document.getElementById('pocaStrada').innerHTML = pochiKm;
 
